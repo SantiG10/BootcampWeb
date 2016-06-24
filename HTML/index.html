@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta  name="keywords" content="pabra, clave, carros, ventas, alquiler"> <!--Palabras claves que los buscadores toman en cuenta en las busquedas  -->
+    <meta name="description" content="Contenido de descripción para identificar mi pagina WEB">
+    <meta name="author" content="Nombre quien hizo la pagina">
+    <title>Aprendiendo sobre HTML</title>
+  </head>
+  <body style="  padding: 10px 10px 0 10px; background-color: #f8f8f8;">
+    <!--Conocimiento de tiulos en HTML-->
+    <h1>Titulo de mucha relevancia en la pagina WEB</h1>
+    <h6>Titulo de poca relevancia en la pagina WEB</h6>
+
+    <!--Textos en HTML-->
+    <p>Etiqueta p -> Este texto estará separado por parrafo, puede ser tan largo el texto
+    como se quiera.</p>
+    <span>Etiqueta span -> Esta etiqueta puede tener texto, pero no tiene tanta relevancia para la pagina.</span>
+
+    <!--Seccionar o agrupar contenido anidandolo en HTML-->
+    <div> <!--Permite agrupar cosas, laterares, arriba -->
+      <h3>Este titulo es de mi div</h3>
+      <p>La etiqueta div permite agrupar, añidar contenidos.</p>
+    </div>
+
+    <section>
+      <h3>Etiqueta Section</h3>
+      <p>Tambien me permite agrupar.</p>
+    </section>
+
+    <article>    <!-- -->
+      <h3>Titulo del article</h3>
+      <p>Yo puedo mantener contenido relevante, pero no tan relevante como un
+      section. Hacemos buena pareja, pero no es fundamental.</p>
+    </article>
+
+    <aside>     <!--Enlaces a paginas web externa, publicidad, contenido que no tiene que ver con nuestra pagina-->
+      <h3>Etiqueta aside</h3>
+      <p>Aca deberia ir contenido que tiene poca revelancia o no tiene nada que ver
+      con el contenido de mi pagina web.</p>
+    </aside>
+
+    <!-- Listas ordenadas y desordenadas-->
+    <h3>Lista ordenada</h3>
+    <ol>     <!--Ordena numericamante -->
+      <li>Limon</li>
+      <li>Mango</li>
+      <li>Pera</li>
+    </ol>
+
+    <h3>Lista desordenada</h3>
+    <ul>      <!-- Ordena por medio de viñetas-->
+      <li>Limon</li>
+      <li>Mango</li>
+      <li>Pera</li>
+    </ul>
+
+    <!-- Insertar imagenes en HTML-->
+    <h3>Imagen</h3>
+    <img src="http://www.geeky-gadgets.com/wp-content/uploads/2015/07/ruby-on-rails.jpg" width="100" height="100" />
+
+    <!--Enlaces en HTML-->
+
+    <div>
+      <h3>Imagen con enlace</h3>
+      <a href="https://facebook.com">
+        <img src="https://image.freepik.com/iconos-gratis/facebook-logotipo-cuadrado_318-40275.png" width="100" height="100"> </a>
+    </div>
+
+    <!--Formularios en HTML-->
+    <h3>Formularios</h3>
+    <div>
+      <form class="" action="index.html" method="GET">  <!-- Get enviar informacion sin cuidado, Post enviar datos de forma cuidadosa-->
+          <div>
+            <label for="" style="width: 15%; display: inline-block;"> Nombre:</label>
+            <input type="text" name="name" placeholder="Escriba Nombre" style="padding:5px; margin-bottom:10px">
+          </div>
+          <div>
+            <label for="" style="width: 15%; display: inline-block;"> Contraseña:</label>
+            <input type="password" name="password" placeholder="Escriba Contraseña" style="padding:5px; margin-bottom:10px">
+          </div>
+          <div>
+            <label for=""> Comentarios: </label>
+          </div>
+          <div>
+            <textarea name="name" rows="8" cols="50" style="padding:5px; margin-bottom:10px" placeholder="Escriba aca los comentarios"></textarea>
+          </div>
+          <input type="submit" value="Enviar">
+      </form>
+    </div>
+
+    <!--Etiquetas de importancia, header, nav y footer -->
+
+    <header>   <!--Contenido en la navegacion dentro del sitio WEB-->
+      <p>Puede ir cualquier contenido, pero tiene mas relevancia si hay cosas que
+      permiten la navegacion del sitio, como enlaces.</p>
+    </header>
+
+    <nav>    <!--Enlaces de navegacion del sitio-->
+      <ul>
+        <li><a href="">Home</a></li>
+        <li><a href="">Perfil</a></li>
+        <li><a href="">Contactos</a></li>
+      </ul>
+    </nav>
+
+    <footer>   <!-- Amenazas coorporativas el pie de la pagina-->
+      <p>Aqui van amenazas corporativas, terminos legales, enlaces a redes sociales,
+        y temrinos y condiciones.</p>
+    </footer>
+  </body>
+</html>

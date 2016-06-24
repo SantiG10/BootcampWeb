@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+<script type="text/javascript">
+function showLarge(srcLarge)
+{
+   document.getElementById("large").src = srcLarge;
+}
+</script>
+
+
+<img src="img/1.png"  onclick="showLarge(src='img/1.png')"/>
+<img src="img/2.png"  onclick="showLarge(src='img/2.png')"/>
+<img src="img/3.png"  onclick="showLarge(src='img/3.png')"/>
+<br>
+<img id="large" src="img/0.png" />
+  </body>
+</html>

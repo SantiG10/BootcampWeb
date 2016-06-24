@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Eventos</title>
+  </head>
+  <body>
+    <p>Click al bot&oacute;n.</p>
+    <button onclick="myFunction()">Pulsar</button>
+    <button type="button" onclick="alert(sumar(40,70))">sumar</button>
+    <p id="demo"></p>
+    <p id="suma">
+
+    </p>
+    <script type="text/javascript">
+      function myFunction() {
+        var person = prompt("Introduzca un nombre:" , "John");
+        if (person != null) {
+          document.getElementById("demo").innerHTML = "Hola " + person + "! C&oacute;mo est&aacute;s?";
+        }
+      }
+      var num1 = prompt("Introduzca un numero 1: ","");
+      var num2 = prompt("Introduzca un numero 2: ","");
+      document.getElementById("suma").innerHTML = "la suma es: " + sumar(num1,num2);
+      function sumar(x,y){
+        x = parseInt(x);
+        y = parseInt(y);
+        return x + y;
+      }
+    </script>
+  </body>
+</html>

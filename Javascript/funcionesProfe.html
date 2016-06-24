@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+
+	<body>
+
+	<!--
+		<script>
+		
+			function sumar(x, y) {
+				
+				var resultado = x + y;
+				
+				return resultado;
+				
+			}		
+		
+		</script>
+		
+		<button onclick="alert(sumar('Hola',' como andan?'))" >Sumar</button>
+		
+		-->
+		
+		<form  name="form1">
+		
+		<script>
+		
+			function obtenerNombre() {
+				
+				//var nombre = document.getElementById("nombreId").value;
+				
+				var nombre = document.form1.nombreId.value;
+				
+				return nombre;
+				
+			}	
+			
+		</script>
+		
+		<label>Nombre: </label>
+		<input id="nombreId" name="nombre" type="text">
+		<label>Opcion 1: </label>
+		<input id="radioId1" name="radioName" type="radio">
+		<label>Opcion 2: </label>
+		<input id="radioId2" name="radioName" type="radio">
+		<datalist id="datalistId">
+			<option value="opcion 1"></option>
+			<option value="opcion 2"></option>
+			<option value="opcion 3"></option>
+		</datalist>
+		<input id="input" list="datalistId" type="text">
+		
+		</form>
+		
+		<script>	
+		
+			function getDatalist() {
+				var value = document.getElementById("input").value;
+				return value;				
+			}
+			
+			function obtenerOpciones() {
+				var radioList = document.getElementsByName("radioName");
+				console.log(radioList);
+				var opcion;
+				for(var i = 0; i < radioList.length; i++)
+				{
+					console.log(radioList[i].checked);
+					if (radioList[i].checked) {
+						opcion = "Opcion elegida " + (i + 1);
+					}
+				}
+				return opcion;
+			}
+		
+		</script>
+		
+		<button onclick="alert(obtenerNombre())" >Click 1</button>		
+		<label>  </label>
+		<button onclick="alert(obtenerOpciones())" >Click 2</button>
+		<label>  </label>
+		<button onclick="alert(getDatalist())" >Click 3</button>		
+		
+
+	</body>
+
+</html>

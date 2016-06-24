@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Prueba 1</title>
+    <script src="angular.min.js"></script>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var myApp = angular.module("myApp",[]);
+      myApp.controller("myController", function($scope) {
+        $scope.count = 0;
+        $scope.Nombre = "Santiago";
+        $scope.Apellidos = "Giraldo";
+     });
+  //    var persona = angular.module("myApp",[]);
+  //    persona.controller("persona", function($scope) {
+  //      $scope.Nombre = "Santiago";
+  //      $scope.Apellidos = "Giraldo";
+  //    });
+    </script>
+    <h3>AngularJS</h3>
+    <div ng-app="myApp">
+    <h4>Ejemplo 1</h4>
+      <p>Name:<input type="text" ng-model=name></p>
+      <p ng-bind=name></p>
+      <hr>
+      <div class="">
+        <h4>Ejemplo 2</h4>
+        <p>Mi expresión matematica: {{5+5}}</p>
+      </div>
+      <hr>
+      <div ng-init=cantidad=2;costo=20>
+        <h4>Ejemplo 3</h4>
+        <p>Total costo: {{cantidad*costo}}</p>
+      </div>
+      <hr>
+      <div  ng-controller="myController">
+        <h4>Ejemplo 4</h4>
+        <button ng-click="count = count + 1">Click Me!</button>
+        <p>{{count}}</p>
+      </div>
+      <hr>
+      <div ng-init=Nombre="Santiago";Apellido="Giraldo">
+        <h4>Ejemplo 5</h4>
+        <p>Tu nombre completo es: {{Nombre + " " + Apellido}}</p>
+      </div>
+      <hr>
+      <div ng-controller="myController">
+        <h4>Ejemplo 6</h4>
+        Primer Nombre: <input type="text" ng-model=Nombre> <br>
+        Apellidos: <input type="text" ng-model=Apellidos> <br>
+        <p>Nombre completo: {{Nombre + " " + Apellidos}}</p>
+      </div>
+      <div ng-init=puntos=[1,2,3,4,5]>
+        <h4>Ejemplo 7</h4>
+        <p>tus puntos fueron: {{puntos[3]}}</p>
+      </div>
+      <hr>
+      <div data-ng-init=names=['Luz','Liz','Ana']>
+        <h4>Ejemplo 8</h4>
+        <p>Lista desde Angular</p>
+        <ul>
+          <li ng-repeat="y in names">{{y}}</li>
+        </ul>
+        <hr>
+      </div>
+        <div ng-init="personas=[{name:'Ana',country:'Paraguay'},{name:'Victor'
+                      ,country:'Argentina'},{name:'Luis',country:'Brazil'}]">
+          <h4>Ejemplo 9</h4>
+          <p>Lista de vector de varios objetos</p>
+          <ul>
+            <li ng-repeat="x in personas | orderBy:'country'">
+              <p>Nombre: {{x.name}}</p>
+              <p>País: {{x.country}}</p>
+            </li>
+          </ul>
+      </div>
+      
+    </div>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+.static {
+  position: static;
+  color: blue;
+}
+
+.relative {
+  position: relative;
+  top: 180px;
+  left: 20px;
+  background-color: red;
+  color: #FFFFFF;
+  width: 500px;
+}
+
+.fixed {
+  position: fixed;
+  bottom: 20px;
+  right: 500px;
+  width: 200px;
+  background-color: green;
+  text-align: center;
+}
+
+.absolute {
+  position: absolute;
+  top: 120px;
+  right: 0;
+  width: 300px;
+  height: 200px;
+  background-color: black;
+  color: #FFFFFF;
+}
+
+html {
+  font: 125% Verdana,sans-serif;
+}

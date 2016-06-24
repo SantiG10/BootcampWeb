@@ -1,0 +1,51 @@
+.center-text {
+  text-align: center;
+}
+
+.center-div  {
+  margin: auto;
+  width: 130px;
+  height: 160px;
+}
+
+.img {
+  width: 130px;
+  height: 160px;
+  border-radius: 10px 10px 10px 10px;
+  -moz-border-radius: 10px 10px 10px 10px;
+  -webkit-border-radius: 10px 10px 10px 10px;
+  border: 0px solid #000000;
+}
+
+.negrilla {
+  font-weight: bold;
+}
+
+.fondo {
+  background-color: #BCD8E8;
+}
+
+.margen {
+  margin-left: 100px;
+}
+
+p {
+  text-align : justify;
+  margin-right: 100px;
+}
+
+.fondo:hover{
+  background-color: #3E6869;
+  color: #FFFFFF;
+}
+
+footer {
+  text-align: center;
+  background-color: #BCD8E8;
+	bottom: 0;
+  height: 100px;
+}
+
+.footer {
+  padding-top: 25px;
+}

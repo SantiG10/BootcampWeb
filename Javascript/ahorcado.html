@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ahorcado</title>
+  </head>
+  <body id="body">
+    <h2> Juego Ahorcado</h2>
+    <script type="text/javascript">
+  //    var bloq=document.getElementById("bloque");
+  //    bloq.innerHTML= "<img src='img/0.png' alt='Imagen' alt="" />";
+    //  document.write("<img src='img/0.png' alt='Imagen' />");
+      var palabras = ["html","javascript","css","bootstrap","angular","jquery","ruby","rails","rubyonrails","go"];
+      var random = Math.ceil(Math.random()*10) % palabras.length;
+      var palabra = palabras[random];
+      var cont = 0;
+      var cont_letras = 0;
+      var encontro = false;
+      var letras = palabra.split("");
+      var visible = new Array(letras.length);
+      var container = document.getElementById("imagen");
+    /*
+      for (var i = 0; i < visible.length; i++) {
+        console.log(visible[i]);
+      }
+    */
+      pintartablero();
+    //  var img = "<img src='img/0.png' alt='Imagen' />";
+    //  document.getElementById("div1").innerHTML = img;
+      document.write("<br> <br> Numeros de intentos errados: " + cont + ", Total de intentos posibles 7<br><br>");
+      document.write("<img src='img/0.png' alt='Imagen' />");
+      llenar_false();
+      function validar() {
+        //  var letra = prompt("Escriba una letra o la palabra: ","");
+        var letra = document.getElementById("palabra").value;
+        console.log(letra);
+          if(letra.length > 1){
+            if(letra == palabra){
+              document.body.innerHTML="";
+              document.write("<h2>Juego Ahorcado</h2>");
+              document.write(palabra);
+              document.write("<br> <br> Numeros de intentos errados: " + cont + ", Total de intentos posibles 7");
+              alert("Has adivinado la palabra");
+              document.write("<br> <a href='file:///Users/Santiago/Documents/WorldTechMakers/Javascript/ahorcado.html'> Volver a jugar </a>");
+            } else{
+              document.body.innerHTML="";
+              document.write("<h2>Juego Ahorcado</h2>");
+              pintartablero();
+              cont += 1;
+              document.write("<br> <br> Numeros de intentos errados: " + cont + ", Total de intentos posibles 7");
+            }
+          }else {
+            for (var i = 0; i < letras.length; i++) {
+              if (letras[i] == letra) {
+                  visible[i] = true;
+                  encontro = true;
+              }
+            }
+            if(encontro == true){
+              encontro = false;
+            } else {
+              cont += 1;
+            //  document.write("<div>");
+            //  document.write("<img src='img/" + cont.toString() + ".png' alt='Imagen' />");
+            //  document.write("</div>");
+            }
+
+            document.body.innerHTML="";
+            document.write("<h2>Juego Ahorcado</h2>");
+            for (var i = 0; i < letras.length; i++) {
+              if(visible[i] == true){
+                document.write(letras[i] + "  ");
+              }else {
+                document.write("__  ");
+              }
+            }
+            document.write("<br> <br> Numeros de intentos errados: " + cont + ", Total de intentos posibles 7 <br><br>");
+            document.write("<img src='img/" + cont.toString() + ".png' alt='Imagen' /><br>");
+            document.write("<label>Escriba una letra o la palabra: </label>");
+            document.write("<input type='text' id='palabra' name='palabra' onkeypress='saltar(event)' autofocus>");
+            document.write("<button onclick='validar()'>Enviar</button>");
+
+        //    var img = "<img src='img/" + cont.toString() + ".png' alt='Imagen'/>";
+        //    console.log(img);
+      //      document.getElementById("div").innerHTML = "<img src='img/" + cont.toString() + ".png' alt='Imagen'/>";
+        //    console.log("<img src='img/" + cont.toString() + ".png' alt='Imagen' />");
+
+        //    var img = new Image();
+        //    img.src = "img/" + cont.toString() + ".png";
+        //    container.appendChild(img);
+            cont_letras = 0;
+            for (var i = 0; i < visible.length; i++) {
+                if(visible[i] == true) {
+                  cont_letras = cont_letras + 1;
+                }
+            }
+          //  console.log("cont_letras: " + cont_letras);
+          //  console.log("letras.length: " + letras.length);
+            if (cont_letras == letras.length){
+              alert("Has adivinado la palabra");
+              document.write("<br> <a href='file:///Users/Santiago/Documents/WorldTechMakers/Javascript/ahorcado.html'> Volver a jugar </a>");
+            }
+          }
+        if(cont == 7){
+          alert("No has adivinado la palabra, La palabra era: " + palabra);
+          document.write("<br> <a href='file:///Users/Santiago/Documents/WorldTechMakers/Javascript/ahorcado.html'> Volver a jugar </a>");
+        }
+      }
+
+      function pintartablero() {
+        for (var i = 0; i < letras.length; i++) {
+          document.write("__  ");
+        }
+      }
+
+      function llenar_false() {
+        for (var i = 0; i < visible.length; i++) {
+          visible[i] = false;
+        }
+      }
+
+      function saltar(e) {
+        tecla = (document.all) ? e.keyCode : e.which;
+        if (tecla==13){
+          validar();
+        }
+      }
+    //    alert(img);
+    //    document.getElementById('img').src = "./img/7.png";
+    </script>
+    <br>
+    <div>
+      <label for="">Escriba una letra o la palabra: </label>
+      <input type="text" id="palabra" name="palabra" onkeypress="saltar(event)" autofocus>
+      <input type="submit" name="button" onclick="validar()" value="Enviar">
+    </div>
+  </body>
+</html>

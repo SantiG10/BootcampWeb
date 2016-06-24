@@ -1,0 +1,47 @@
+p {
+  color: #FFFFFF;
+}
+/* Comentarios */
+body {
+  background-color: #B4B9CF;
+  font-family: arial;
+  color: #FFFFFF;
+}
+
+
+
+.list {
+  font-size: 20px;
+}
+
+.list li {
+  list-style: none;
+}
+
+#parrafo {
+border: 2px solid green;
+}
+
+#list2 li {
+  display: inline;
+  padding: 10px 30px;
+}
+
+header {
+  text-align: center;
+  background-color: blue;
+  padding: 20px;
+}
+#parrafo2 {
+   font-size: 20px;
+   border: 2px solid blue;
+   color: blue;
+   background-color: grey;
+}
+
+/* seudo clase */
+
+p:hover {
+  color: #F56055;
+  font-size: 20px;
+}

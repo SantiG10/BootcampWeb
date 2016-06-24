@@ -1,0 +1,72 @@
+#wrapper
+{
+	width: 80%;
+	margin: 0 auto;
+}
+
+article
+{
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	float:left;
+	height: 100%;
+	background-color: grey;
+	padding: 2%;
+	text-align: center;
+	height: 400px;
+}
+
+#column1
+{
+	background-color: #96c144;
+	width: 100%;
+}
+
+
+#column2
+{
+	background-color: #6fa843;
+	width: 50%;
+}
+#column3
+{
+	background-color: #cde0aa;
+	width: 50%;
+}
+
+@media screen and (max-width: 960px){
+	#wrapper
+	{
+		width: 90%;
+		margin: 0 auto;
+	}
+}
+
+@media screen and (max-width: 640px){
+	#wrapper
+	{
+		width: 100%;
+		margin: 0 auto;
+	}
+}
+
+@media screen and (max-width: 480px){
+	#wrapper
+	{
+		width: 100%;
+		margin: 0 auto;
+	}
+	#column1
+	{
+		width: 100%;
+	}
+	#column2
+	{
+		width: 100%;
+	}
+	#column3
+	{
+		width: 100%;
+	}
+}

@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/bootstrap.min.css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" href="css/style.css" media="screen" title="no title" charset="utf-8">
+    <title>Formulario</title>
+  </head>
+  <body>
+      <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Hoja de vida</a>
+          </div>
+
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
+              <li><a href="#">Link</a></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><a href="#">Separated link</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><a href="#">One more separated link</a></li>
+                </ul>
+              </li>
+            </ul>
+            <form class="navbar-form navbar-left" role="search">
+              <div class="form-group">
+                <input type="text" class="form-control" placeholder="Search">
+              </div>
+              <button type="submit" class="btn btn-default">Submit</button>
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="#">Link</a></li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li role="separator" class="divider"></li>
+                  <li><a href="#">Separated link</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </nav>
+
+      <div class="container">
+        <form name="formulario" class="" action="" method="post">
+          <br><br><br>
+          <div class="bg-info">
+            <h2>Datos Personales</h2>
+          </div>
+          <div class="form-group">
+            <label for="Nombre">Nombre<span class="rojo">*</span></label>
+            <input type="text" class="form-control" id="Nombre" name="txt_Nombre" required placeholder="Nombres">
+          </div>
+          <div class="form-group">
+            <label for="Apellidos">Apellidos<span class="rojo">*</span></label>
+            <input type="text" class="form-control" id="Apellidos" placeholder="Apellidos" required>
+          </div>
+          <div class="form-group">
+              <label for="exampleInputEmail1">Tipo de identificación</label>
+              <div class="row">
+                  <div class="col-md-7">
+                    <select class="form-control" id="Tipo_Id">
+                      <option value="null">Eliga una opción</option>
+                      <option value="Cedula">Cedula</option>
+                      <option value="Tarjeta Identidad">Tarjeta Identidad</option>
+                      <option value="Pasaporte">Pasaporte</option>
+                    </select>
+                  </div>
+                <div class="col-md-5">
+                    <input type="text" class="form-control" id="Num_Documento" placeholder="Numero Documento">
+                </div>
+              </div>
+          </div>
+          <div class="form-group">
+              <label for="exampleInputEmail1">Fecha de nacimiento<span class="rojo">*</span></label>
+              <div class="row">
+                <div class="col-md-4">
+                  <select class="form-control">
+                    <option value="99">Eliga Día</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="3">4</option>
+                    <option value="3">5</option>
+                    <option value="3">6</option>
+                    <option value="3">7</option>
+                    <option value="3">8</option>
+                    <option value="3">9</option>
+                    <option value="3">10</option>
+                    <option value="3">11</option>
+                    <option value="3">12</option>
+                    <option value="3">13</option>
+                    <option value="3">14</option>
+                    <option value="3">15</option>
+                    <option value="3">16</option>
+                    <option value="3">...</option>
+                  </select>
+                </div>
+                <div class="col-md-5">
+                  <select class="form-control">
+                    <option value="99">Eliga Mes</option>
+                    <option value="1">Enero</option>
+                    <option value="2">Febrero</option>
+                    <option value="3">Marzo</option>
+                    <option value="3">Abril</option>
+                    <option value="3">Mayo</option>
+                    <option value="3">Junio</option>
+                    <option value="3">Julio</option>
+                    <option value="3">Agosto</option>
+                    <option value="3">Septiembre</option>
+                    <option value="3">Octubre</option>
+                    <option value="3">Noviembre</option>
+                    <option value="3">Diciembre</option>
+                  </select>
+                </div>
+                <div class="col-md-3">
+                  <select class="form-control">
+                    <option value="99">Eliga Año</option>
+                    <option value="3">1987</option>
+                    <option value="3">1988</option>
+                    <option value="3">1989</option>
+                    <option value="3">1990</option>
+                    <option value="3">1991</option>
+                    <option value="3">1992</option>
+                    <option value="3">1993</option>
+                    <option value="3">1994</option>
+                    <option value="1">1995</option>
+                    <option value="2">1996</option>
+                    <option value="3">1997</option>
+                    <option value="3">1998</option>
+                    <option value="3">1999</option>
+                    <option value="3">2000</option>
+                    <option value="3">2001</option>
+                    <option value="3">2002</option>
+                    <option value="3">...</option>
+                  </select>
+                </div>
+              </div>
+          </div>
+          <div class="form-group">
+            <label for="Genero">Genero<span class="rojo">*</span></label>
+            <div class="row">
+              <div class="col-md-2">
+                <div class="radio">
+                  <label>
+                    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option1">
+                    Hombre
+                  </label>
+                </div>
+              </div>
+              <div class="col-md-2">
+                <div class="radio">
+                  <label>
+                    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                    Mujer
+                  </label>
+                </div>
+              </div>
+              <div class="col-md-2">
+                <div class="radio">
+                  <label>
+                    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option3">
+                    Otro
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="Estado_Civil">Estado Civil<span class="rojo">*</span></label>
+              <select class="form-control">
+                <option value="99">Eliga una opción</option>
+                <option value="1">Soltero</option>
+                <option value="2">Casado</option>
+                <option value="3">Divorsiado</option>
+                <option value="2">Viudo</option>
+              </select>
+          </div>
+          <div class="form-group">
+            <label for="Telefono">Telefono 1<span class="rojo">*</span></label>
+            <div class="row">
+              <div class="col-md-4">
+                <select class="form-control">
+                  <option value="99">Eliga una opción</option>
+                  <option value="1">Telefono</option>
+                  <option value="2">Celular</option>
+                </select>
+              </div>
+              <div class="col-md-3">
+                <input type="text" class="form-control" id="identificador" placeholder="Identificador">
+              </div>
+              <div class="col-md-5">
+                <input type="text" class="form-control" id="Telefono" placeholder="Telefono">
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="Telefono">Telefono 2</label>
+            <div class="row">
+              <div class="col-md-4">
+                <select class="form-control">
+                  <option value="99">Eliga una opción</option>
+                  <option value="1">Telefono</option>
+                  <option value="2">Celular</option>
+                </select>
+              </div>
+              <div class="col-md-3">
+                <input type="text" class="form-control" id="identificador" placeholder="Identificador">
+              </div>
+              <div class="col-md-5">
+                <input type="text" class="form-control" id="Telefono" placeholder="Telefono">
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="Pais">País<span class="rojo">*</span></label>
+            <select class="form-control">
+              <option value="99">Eliga una opción</option>
+              <option value="1">Colombia</option>
+              <option value="2">Velezuela</option>
+              <option value="3">Argentina</opttion>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="Pais">Departamento<span class="rojo">*</span></label>
+            <select class="form-control">
+              <option value="99">Eliga una opción</option>
+              <option value="1">Antioquia</option>
+              <option value="2">Caracas</option>
+              <option value="3">Buenos Aires</opttion>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="Pais">Ciudad<span class="rojo">*</span></label>
+            <select class="form-control">
+              <option value="99">Eliga una opción</option>
+              <option value="1">Medellin</option>
+              <option value="2">Caracas</option>
+              <option value="3">Buenos Aires</opttion>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="Direccion">Dirección<span class="rojo">*</span></label>
+            <input class="form-control" type="text" name="direccion" id="Direccion" placeholder="Dirección">
+          </div>
+          <div class="form-group">
+            <label for="Nacionalidad">Nacionalidad<span class="rojo">*</span></label>
+            <select class="form-control">
+              <option value="99">Eliga una opción</option>
+              <option value="1">Colombiana</option>
+              <option value="2">Velezonala</option>
+              <option value="3">Argentina</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="Permiso_Trabajo">Permiso de trabajo<span class="rojo">*</span></label>
+            <select class="form-control">
+              <option value="99">Eliga una opción</option>
+              <option value="1">Con permiso de trabajo</option>
+              <option value="2">Sin permiso de trabajo</opion>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="Permiso_Conduccion">Permiso de conducción<span class="rojo">*</span></label>
+            <div class="row">
+              <div class="checkbox">
+                <span class="col-md-1"><label><input type="checkbox" value="">A1</label></span>
+                <span class="col-md-1"><label><input type="checkbox" value="">A2</label></span>
+                <span class="col-md-1"><label><input type="checkbox" value="">B1</label></span>
+                <span class="col-md-1"><label><input type="checkbox" value="">B2</label></span>
+                <span class="col-md-1"><label><input type="checkbox" value="">B3</label></span>
+                <span class="col-md-1"><label><input type="checkbox" value="">C1</label></span>
+                <span class="col-md-1"><label><input type="checkbox" value="">C2</label></span>
+                <span class="col-md-1"><label><input type="checkbox" value="">C3</label></span>
+                <span class="col-md-3"><label><input type="checkbox" value="">No tengo</label></span>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="Vehiculo">Dispone de vehiculo propio<span class="rojo">*</span></label>
+              <div class="row">
+                <div class="col-md-2">
+                  <div class="radio">
+                    <label>
+                      <input type="radio" name="optionsRadios" id="optionsRadios2" value="option1">
+                      Sí
+                    </label>
+                  </div>
+                </div>
+                <div class="col-md-2">
+                  <div class="radio">
+                    <label>
+                      <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                      No
+                    </label>
+                  </div>
+                </div>
+              </div>
+          </div>
+          <div class="form-group">
+            <label for="Discapacidad">Discapacidad</label>
+            <div class="row">
+              <div class="checkbox">
+                <span class="col-md-1"><label><input type="checkbox" value=""></label></span>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="Foto">Inserte su foto</label>
+            <input type="file" id="exampleInputFile">
+            <p class="help-block">Suba su foto en formato jpg/jpeg/gif/png/bmp.
+            Peso máximo de 500Kb </p>
+            <button class="btn btn-danger btn-xs" type="button" name="button" data-toggle="modal" data-target="#myModal">
+              <span class="glyphicon glyphicon-trash"></span> Eliminar Foto</button>
+          </div>
+          <div class="bg-info">
+            <h2>Perfil Profesional</h2>
+          </div>
+          <div class="form-group">
+            <label for="Cargo-Titulo">Cargo o titulo breve de su hoja de vida<span class="rojo">*</span></label>
+            <input type="text" class="form-control" name="name" id="Cargo-Titulo" placeholder="Descripción">
+          </div>
+          <div class="form-group">
+            <label for="Cargo-Titulo">Descripción breve de su perfil profesional<span class="rojo">*</span></label>
+            <textarea class="form-control" rows="7" placeholder="Descripción"></textarea>
+            <p>(Máximo 500 carácteres)</p>
+          </div>
+          <div>
+            <input type="submit" class="btn btn-success bnt-lg center-block" onclick="validar()" value="Aceptar">
+          </div>
+        </form>
+      </div><br>
+
+      <!-- Modal -->
+      <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+              <h4 class="modal-title " id="myModalLabel">Exito..! Foto eliminada</h4>
+            </div>
+            <div class="modal-body">
+              Su foto ha sido eliminada
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="panel panel-default">
+        <div class="panel-footer text-center">Formulario pagina Web
+          <p>Santiago Grialdo Mejía</p>
+        </div>
+      </div>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+      <script src="js/bootstrap.min.js"> </script>
+      <script src="js/formulario.js"> </script>
+  </body>
+</html>

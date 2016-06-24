@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ejercicios</title>
+    <script src="angular.min.js"></script>
+  </head>
+  <body>
+    <center><h1>AngularJS</h1></center>
+    <script type="text/javascript">
+       var myApp = angular.module("myApp",[]);
+        myApp.controller("myController", function($scope) {
+          $scope.resul = 0;
+          $scope.Nombre = "";
+          $scope.Apellido = "";
+          $scope.frase =""
+          $scope.cadena = "";
+          $scope.valor = 0;
+          $scope.cel = 0;
+          $scope.fah = 0;
+          $scope.date = "";
+          $scope.date2 = "";
+        });
+
+        myApp.filter("reverse", function() {
+          return function(input) {
+            var palindroma = true;
+            var frase = input.toLowerCase().split("");
+            var fraseSinEspacios = "";
+            for(i in frase) {
+               if(frase[i] != " ") {
+                 fraseSinEspacios += frase[i];
+               }
+             }
+             var VecFraseSinEspacios = fraseSinEspacios.split("");
+             var fraseSinEspaciosReves = fraseSinEspacios.split("").reverse();
+            for (var i = 0; i < fraseSinEspacios.length; i++) {
+                if(VecFraseSinEspacios[i] != fraseSinEspaciosReves[i]){
+                    palindroma = false;
+                    break;
+                }
+            }
+            if (palindroma) {
+              document.getElementById("frase").style.color = "blue";
+              if(fraseSinEspacios != ""){
+                document.getElementById("palindroma").innerHTML = "palindroma";
+              } else {
+                document.getElementById("palindroma").innerHTML = "";
+              }
+              return input.split("").reverse().join("");
+            } else {
+              document.getElementById("frase").style.color = "red";
+              document.getElementById("palindroma").innerHTML = "No palindroma";
+              return input.split("").reverse().join("");
+            }
+          };
+        });
+
+        myApp.filter("tweet", function () {
+          return function(input) {
+              var cadena = input;
+              if(140 - cadena.length < 5){
+                document.getElementById("tweet").style.color = "red";
+              } else {
+                document.getElementById("tweet").style.color = "green";
+              }
+              if(140 - cadena.length == 0){
+
+              }
+              return 140 - cadena.length;
+          };
+        });
+
+        myApp.filter("precio", function () {
+          return function(input) {
+              var cadena = input;
+              if (cadena == "Pan"){
+                return "$"+100;
+              } else if (cadena == "Mantequilla"){
+                return "$"+150;
+              } else if(cadena == "Escoge una opción" || cadena == ""){
+                return "$"+0;
+              }else {
+                return "$"+200;
+              }
+          };
+        });
+
+        myApp.filter("fecha", function () {
+          return function (input) {
+              var fecha = input;
+              var Vecfecha = input.split("");
+              var date = Vecfecha[0] + Vecfecha[1];
+              var month = Vecfecha[3] + Vecfecha[4];
+              var year = Vecfecha[6] + Vecfecha[7] + Vecfecha[8] + Vecfecha[9];
+              //console.log("Fecha Introducida:" + date + " " + month + " " + year);
+              var f = new Date();
+              var FechaSistema = f.getDate() + "/" + (f.getMonth() +1) + "/" + f.getFullYear();
+              if(date > f.getDate() || month > (f.getMonth()+1) || year > f.getFullYear()){
+                return "Fecha Invalida";
+              } else {
+                if (fecha.length == 10) {
+                  var fecha1 = new Date(year,month,date);
+                  var fecha2 = new Date(f.getFullYear(),(f.getMonth()+1),f.getDate());
+                  var diasDif = fecha2.getTime() - fecha1.getTime();
+                  var dias = Math.round(diasDif/(1000 * 60 * 60 * 24));
+                  return "Pasaron " + dias + " días";
+                }
+              }
+          };
+        });
+
+        myApp.filter("fecha2", function () {
+          return function (input) {
+            var fecha = input;
+            var Vecfecha = input.split("");
+            var date = Vecfecha[0] + Vecfecha[1];
+            var month = Vecfecha[3] + Vecfecha[4];
+            var year = Vecfecha[6] + Vecfecha[7] + Vecfecha[8] + Vecfecha[9];
+            var f = new Date();
+            var FechaSistema = f.getDate() + "/" + (f.getMonth() +1) + "/" + f.getFullYear();
+            if (fecha.length == 10) {
+              if(date > f.getDate() || month > (f.getMonth()+1) || year > f.getFullYear()){
+                document.getElementById("fecha").style.color = "green";
+                return month + "-" + date + "-" + year;
+              } else if (date < f.getDate() || month < (f.getMonth()+1) || year < f.getFullYear()){
+                document.getElementById("fecha").style.color = "#E8D436";
+                return month + "-" + date + "-" + year;
+              } else {
+                document.getElementById("fecha").style.color = "blue";
+                return month + "-" + date + "-" + year;
+              }
+            }
+          };
+        });
+        
+        function convert(degree) {
+            if (degree == "C") {
+                F = document.getElementById("c").value * 9 / 5 + 32;
+                document.getElementById("f").value = Math.round(F);
+            } else {
+                C = (document.getElementById("f").value -32) * 5 / 9;
+                document.getElementById("c").value = Math.round(C);
+            }
+        }
+    </script>
+    <div ng-app="myApp">
+      <div ng-controller="myController">
+        <h4>Ejercicio 1</h4>
+        <label>Nombre</label> <br>
+        <input type="text" ng-model=Nombre> <br>
+        <label>Apellido</label> <br>
+        <input type="text" ng-model=Apellido> <br>
+        <label>Hola {{Nombre + " " + Apellido}}</label>
+      </div>
+      <hr>
+      <div ng-controller="myController">
+        <h4>Ejercicio 2</h4>
+        <label>Operador 1</label> <br>
+        <input type="text" ng-model=Num1> <br>
+        <label>Operador 2</label> <br>
+        <input type="text" ng-model=Num2> <br>
+        <button ng-click="resul = Num1 * Num2">*</button> <br>
+        <label>{{resul}}</label> <br>
+        <label>Variante: {{Num1 * Num2}}</label>
+      </div>
+      <hr>
+      <div ng-controller="myController">
+        <h4>Ejercico 3</h4>
+        <label>Frase</label> <br>
+        <input type="text" ng-model=frase> <br>
+        <label>{{frase}}</label> <br>
+        <label id="frase">{{frase | reverse}}</label>
+        <p id="palindroma"></p>
+      </div>
+      <hr>
+      <div ng-controller="myController">
+        <h4>Ejercico 4</h4>
+        <label>Tweet</label> <br>
+        <textarea rows="7" cols="50" ng-model=cadena maxlength="140"> </textarea> <br>
+        <label id="tweet">{{cadena | tweet}}</label>
+      </div>
+      <hr>
+      <div ng-controller="myController">
+        <h4>Ejercico 5</h4>
+        <label>Producto</label> <br>
+        <select ng-model=valor>
+          <option>Escoge una opción</option>
+          <option>Pan</option>
+          <option>Mantequilla</option>
+          <option>Panela</option>
+        </select> <br>
+        <label>Precio</label> <br>
+        <label>{{valor | precio}}</label>
+      </div>
+      <hr>
+      <div ng-controller="myController">
+        <h4>Ejercicio 6</h4>
+        <label>Conversión de grados</label> <br> <br>
+        <label>Celsius</label> <br>
+        <input type="text" ng-model=cel id="c" onkeyup="convert('C')"> <br>
+        <label>Fahrenheit</label> <br>
+        <input type="text" ng-model=fah id="f" onkeyup="convert('F')"> <br>
+      </div>
+      <hr>
+      <div ng-controller="myController">
+        <h4>Ejercicio 7</h4>
+        <label>Fechas 1</label> <br> <br>
+        <label>Fecha(DD/MM/YYYY)</label> <br>
+        <input type="text" ng-model=date> <br>
+        <label>Resultado: {{date | fecha}}</label>
+      </div>
+      <hr>
+      <div ng-controller="myController">
+        <h4>Ejercicio 8</h4>
+        <label>Fechas 2</label> <br> <br>
+        <label>Fecha(DD/MM/YYYY)</label> <br>
+        <input type="text" ng-model=date2> <br>
+        <label id="fecha">Resultado: {{date2 | fecha2}}</label>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script>
+      /*
+        var x = 7 % 3;
+        var y = 27 / 3;
+
+        x += y;
+        console.log("Rsultado es: " + x);  // Resultado por consola
+        alert("Resultado es: " + x);       // Resultado por alerta
+        document.write(x);                 // Resultado lo imprime en la pantalla, es decir por el HTML
+      */
+        document.write("<h2> Ejercicio 1 </h2>");
+        for (var i = 1; i < 21; i++) {
+          if(i % 2 == 0) {
+            document.write(i + "<br>");
+          }
+        }
+
+        document.write("<h2> Ejercicio 2 </h2>");
+        var array = [10,20,5];
+        for (var i = 0; i < array.length; i++) {
+          if(array[i] > 10) {
+            document.write("El numero " + array[i] + " es mayor que 10 <br>");
+          }else if (array[i] < 10) {
+            document.write("El numero " + array[i] + " es menor que 10 <br>");
+          }else {
+            document.write("El numero " + array[i] + " es igual a 10 <br>");
+          }
+        }
+    /*
+        document.write("<h2> Ejercicio 3 </h2>");
+        var n = Math.ceil(Math.random()*10);
+        console.log(n);
+        var cont = 0;
+        var numero;
+        do {
+          var numero = prompt("Digite un numero","");
+          if (numero == n){
+            alert("Has adivinado el numero");
+            break;
+          }else{
+            alert("Sigue intentando");
+            cont +=1;
+            if (cont == 5){
+              alert("Has perdido, se te acabaron los turnos y el numero era: " + n);
+            }
+          }
+        } while(cont < 5);
+
+      */
+        document.write("<h2> Ejercicio 3 </h2>");
+        var nombre = prompt("Digite nombre del estudiante: ","");
+        var nota_1 = prompt("Digite la nota 1: ","");
+        var nota_2 = prompt("Digite la nota 2: ","");
+        var nota_3 = prompt("Digite la nota 3: ","");
+        var nota_media = (parseFloat(nota_1) + parseFloat(nota_2) + parseFloat(nota_3)) / 3;
+
+        document.write("<table border=2>");
+          document.write("<tr>");
+          document.write("<th> Nombre </th>");
+          document.write("<th> Nota Media </th>  </tr>");
+          document.write("<td>" + nombre + "</td>");
+          document.write("<td>" + nota_media + "</td>");
+        document.write("</table>");
+
+     </script>
+  </body>
+</html>

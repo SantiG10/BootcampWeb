@@ -1,0 +1,21 @@
+Clase 1
+
+Terminal de comandos
+
+Se puede hacer las tareas basicas de un computador por medio de la temrinal, es decir, crear carpetas
+o archivos, borar, mover, editar, hasta abrir aplicacione por medio de este medio.
+
+Alguno de estos comandos basicos son:
+
+cd -> Me permite ir de una carpeta a otra. ejemplo: cd Documents   para devolverme a la carpeta anterior
+se utiliza el comando cd ..
+ls -> Me muestra el contenido actual del directorio
+mkdir -> Me permite crear un directorio o carpeta
+touch -> Me permite crear un archivo
+mv -> Me permite cambiar de nombre a un archivo ó mover archivos entre carpetas.
+rmdir -> Me permite borrar una carpeta siempre y cuando este vacia
+rm -ri -> Me permite borrar una carpeta, sin importar su contenido
+cp -> Me permite copiar un archivo ej: cp origen destino
+
+Al final se mostraron las diferencias entre una aplicación web y una página web, tambien los conceptos de 
+Backend y Frontend

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>hover</title>
+  </head>
+  <body>
+    <a href=http://www.google.com id="enlace" onmouseover="cambiar()" onmouseout="cambiar()" target="_blank">Google
+    </a>
+    <script>
+      function cambiar() {
+        if (document.getElementById("enlace").style.color != "red") {
+            document.getElementById("enlace").style.color = "red";
+            document.getElementById("enlace").style.textDecoration = "none";
+        } else {
+        document.getElementById("enlace").style.color = "blue";
+        document.getElementById("enlace").style.textDecoration = "underline";
+        }
+      }
+    </script>
+    <br>
+    <label for="">Nombre:</label>
+    <input id="nombreId" type="tetx" name="nombre">
+    <button  onclick="alert(obtener_Nombre())">Obtener Nombre</button>
+    <script type="text/javascript">
+      function obtener_Nombre() {
+          var nombre = document.getElementById("nombreId");
+          return nombre;
+      }
+    </script>
+
+  </body>
+</html>
