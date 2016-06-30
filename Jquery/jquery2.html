@@ -1,0 +1,28 @@
+<!DOCTYPE html >
+<html><head>
+	<meta charset="utf-8">
+<script src="jquery-3.0.0.js"></script>
+	<script type="text/javascript">
+	 	$(document).ready(function () {
+	 		$("#boton").click(function () {
+	 			dato1 = $("#entrada1").val();
+	 			dato2 = $("#entrada2").val();
+	 			Calcula (dato1,dato2);
+	 		});
+
+	 		function Calcula (num1,num2) {
+	 			var resultado = num1 + num2;
+	 			$("#salida").append(resultado);
+	 		}
+	 	});
+	</script>
+
+</head>
+<body>
+ Primer N&uacute;mero del 1 al 10: <input id="entrada1" type="text"/><br><br>
+ Segundo N&uacute;mero del 1 al 10: <input id="entrada2" type="text"/><br><br>
+ <div id="boton"><button>Pulsa aqu&iacute;</button></div>
+ <br><br>
+ <div id="salida"></div>
+</body>
+</html>

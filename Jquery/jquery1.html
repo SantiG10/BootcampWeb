@@ -1,0 +1,42 @@
+<!DOCTYPE html >
+<html>
+<head>
+<meta charset="utf-8">
+<script src="jquery-3.0.0.js"></script>
+<script type="text/javascript">
+	$(document).ready(function () {
+		var dato1, dato2, resultado;
+		$("button").click(function(){
+
+		 	dato1 = parseInt($("#entrada1").val());
+		 	dato2 = parseInt($("#entrada2").val());
+
+		 	if (dato1 > dato2)
+		 	{
+		 		resultado = " El primero es mayor.";
+		 	}
+		 	else
+		 	{
+		 		if (dato2 > dato1){
+		 			resultado = " El segundo es mayor.";
+		 		}
+		 		else
+		 		{
+		 			resultado = " Son iguales.";
+		 		}
+		 	}
+		 	$("#salida").append(resultado);
+	 	});
+	});
+</script>
+</head>
+<body>
+ 	Introduce primer número: <input id="entrada1" type="text"/>
+ 	<br><br>
+ 	Introduce segundo número: <input id="entrada2" type="text"/>
+ 	<br><br>
+ 	<button>Pulsa para calcular</button>
+ 	<br><br>
+ 	<div id="salida"></div>
+</body>
+</html>
