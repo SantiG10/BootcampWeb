@@ -13,3 +13,7 @@ for i in(1..cantidad_Horas)
     hora += 1
 end
 puts "En #{cantidad_Horas} horas, el reloj marcara las #{hora}"
+
+# otra forma de hacerlo con el modulo 12
+horaTotales = hora + cantidad_Horas
+puts "Con modulo: En #{cantidad_Horas} horas, el reloj marcara las #{horaTotales % 12}"
