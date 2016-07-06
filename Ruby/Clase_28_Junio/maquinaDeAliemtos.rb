@@ -1,15 +1,23 @@
-print "Elija un producto: "
-producto = gets.chomp
-
-if producto == "a"
-  valor = 270
-elsif producto == "b"
-  valor = 340
-else
-  valor = 390
+while true
+  print "Elija un producto: "
+  producto = gets.chomp.upcase
+  if producto == "A"
+    valor = 270
+    break
+  elsif producto == "B"
+    valor = 340
+    break
+  elsif producto == "C"
+    valor = 390
+    break
+  else
+    puts "Error elija un producto correcto"
+  end
 end
+
 puts valor
 monto = 0
+
 begin
   print "ingrese la modena: "
   moneda = gets.chomp.to_i
@@ -20,19 +28,19 @@ begin
 end while monto < valor
 
 puts "Su vuelto"
-monto = monto - valor
+vuelto = monto - valor
 
-if monto != 0
+if vuelto != 0
   begin
-    if monto - 100 >= 0
-        monto -= 100
+    if vuelto - 100 >= 0
+        vuelto -= 100
         puts "100"
-    elsif monto - 50 >= 0
-        monto -= 50
+    elsif vuelto - 50 >= 0
+        vuelto -= 50
         puts "50"
     else
-        monto -= 10
+        vuelto -= 10
         puts "10"
     end
-  end while monto != 0
+  end while vuelto != 0
 end
