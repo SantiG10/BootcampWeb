@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <%= link_to "Posts", posts_path %>
+    <h2>Article</h2>
+    <%= @post.title %>
+    <br>
+    <%= @post.content %>
+    <br><br>
+    <%= link_to "Create comment", new_post_comment_path(@post) %>
+    <ul>
+      <h2>Comments</h2>
+      <% @comments.each do |comment|%>
+      <li>
+        <%= comment.content %>
+      </li>
+      <% end %>
+    </ul>
+  </body>
+</html>
