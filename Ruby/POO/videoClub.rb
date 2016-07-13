@@ -126,7 +126,6 @@ class Plataforma
   WII = 3
 end
 
-
 class VideoJuego < Producto
   def initialize(tipo,consola)
     @tipo = tipo
