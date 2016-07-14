@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="col-md-6 col-md-offset-3">
+    <i class="fa fa-arrow-left" aria-hidden="true" style="color: #337ab7"></i>
+    <%= link_to "Back", tower_apartment_path(@tower,@apartment) %>
+    <h1>New Person</h1>
+    <%= form_for [@tower,@apartment,@person] do |f| %>
+      <div class="form-group">
+        <%= f.label :name, "Name"%>
+        <br>
+        <%= f.text_field :name, placeholder: "Name Person", class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :document, "Document" %>
+        <br>
+        <%= f.text_field :document, placeholder: "Document", class: "form-control"%>
+      </div>
+
+      <div class="form-group">
+        <%= f.submit class:"btn btn-primary btn-block"%>
+      </div>
+  </div>
+    <% end %>
+</div>

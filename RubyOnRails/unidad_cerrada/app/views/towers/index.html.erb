@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+  <div class="container">
+    <div class="jumbotron">
+      <h1>Hello, Apartments</h1>
+      <p>The best way to live</p>
+    </div>
+    <h1>List Towers</h1>
+      <hr>
+		  <% @tower.each do |tower| %>
+        <h4>Name Tower</h4>
+			  <%= tower.name %>
+			  <br>
+        <h4>Name Watchman</h4>
+			  <%= tower.watchman %>
+			  <br><br>
+        <%= link_to "Edit Tower", edit_tower_path(tower) %>
+        <br>
+        <%= link_to "Details", tower_path(tower) %>
+        <hr>
+		<% end %>
+  </div>
+  </body>
+</html>

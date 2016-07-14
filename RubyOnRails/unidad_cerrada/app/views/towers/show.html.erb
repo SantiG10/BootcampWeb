@@ -1,0 +1,34 @@
+<div class="container">
+ <i class="fa fa-arrow-left" aria-hidden="true" style="color: #337ab7"></i>
+ <%= link_to "Back", towers_path %>
+ <hr>
+ <h2>Details Tower</h2>
+ <hr>
+ <h4>Tower</h4>
+ <%= @tower.name %>
+ <br>
+ <h4>Watchman</h4>
+ <%= @tower.watchman %>
+ <br>
+ <h4>Number Apartments</h4>
+ <%= @apartments.length %>
+ <br><br>
+ <%= link_to "Add Apartment", new_tower_apartment_path(@tower) %>
+ <h2>Apartments</h2>
+ <hr>
+ <% @apartments.each do |apartment|%>
+     <h4>Name Apartment</h4>
+     <%= apartment.name %>
+     <br>
+     <h4>Torre</h4>
+     <%= apartment.tower_id %>
+     <br>
+     <h4>Piso</h4>
+     <%= apartment.floor %>
+     <br><br>
+     <%= link_to "Edit Apartment", edit_tower_apartment_path(@tower,apartment) %>
+     <br>
+     <%= link_to "Details", tower_apartment_path(@tower,apartment) %>
+     <hr>
+ <% end %>
+ </div>
