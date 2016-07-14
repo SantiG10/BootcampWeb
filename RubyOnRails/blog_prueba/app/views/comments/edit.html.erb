@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <%= form_for  [@post, @comment] do |f| %>
+      <%=f.label :content, "Comentario" %>
+      <br>
+      <%=f.text_area :content %>
+      <br>
+      <%=f.submit %>
+    <%end%>
+  </body>
+</html>

@@ -15,9 +15,13 @@
     <ul>
       <h2>Comments</h2>
       <% @comments.each do |comment|%>
-      <li>
-        <%= comment.content %>
-      </li>
+        <li>
+          <%= comment.content %>
+        </li>
+        <%= link_to "Edit Comment", edit_post_comment_path(@post,comment) %>
+        <br>
+        <%= link_to "Delete Comment", post_comment_path(@post,comment), method: :delete,  data:{ confirm: "Estas seguro?"} %>
+        <br>
       <% end %>
     </ul>
   </body>
