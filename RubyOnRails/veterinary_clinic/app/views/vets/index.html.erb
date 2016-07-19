@@ -1,0 +1,14 @@
+<div class="container">
+
+  <h2>Lits Vets</h2>
+  <hr>
+  <% @vets.each do |vet| %>
+    <h4>Name</h4>
+    <%= vet.name.capitalize %>
+    <h4>Last Name</h4>
+    <%= vet.last_name.capitalize %>
+    <h4>Turn</h4>
+    <%= vet.turn.capitalize %>
+    <hr>
+  <% end %>
+</div>

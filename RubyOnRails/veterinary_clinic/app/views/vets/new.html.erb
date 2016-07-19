@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="col-md-6 col-md-offset-3">
+    <br>
+    <i class="fa fa-arrow-left" aria-hidden="true" style="color: #337ab7"></i>
+    <%= link_to "Back", pets_path %>
+    <h1>New Vet</h1>
+    <%= form_for @vet do |f| %>
+      <div class="form-group">
+        <%= f.label :name, "Name Vet"%>
+        <br>
+        <%= f.text_field :name, placeholder: "Name Vet", class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :last_name, "Last Name" %>
+        <br>
+        <%= f.text_field :last_name, placeholder: "Last Name", class: "form-control"%>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :turn, "Turn" %>
+        <br>
+        <%= f.text_field :turn, placeholder: "Turn", class: "form-control"%>
+      </div>
+
+      <div class="form-group">
+        <%= f.submit class:"btn btn-primary btn-block"%>
+      </div>
+  </div>
+    <% end %>
+</div>

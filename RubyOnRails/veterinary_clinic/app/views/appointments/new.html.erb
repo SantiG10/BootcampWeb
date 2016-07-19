@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="col-md-6 col-md-offset-3">
+    <br>
+    <i class="fa fa-arrow-left" aria-hidden="true" style="color: #337ab7"></i>
+    <%= link_to "Back", pet_path(@pet) %>
+    <h1>New Appointment</h1>
+    <%= form_for [@pet,@appointment] do |f| %>
+      <div class="form-group">
+        <%= f.label :day, "Day"%>
+        <br>
+        <%= f.text_field :day, placeholder: "Day", class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :hour, "Hour" %>
+        <br>
+        <%= f.text_field :hour, placeholder: "Hour", class: "form-control"%>
+      </div>
+
+      <div class="form-group">
+        <%= f.submit class:"btn btn-primary btn-block"%>
+      </div>
+  </div>
+    <% end %>
+</div>

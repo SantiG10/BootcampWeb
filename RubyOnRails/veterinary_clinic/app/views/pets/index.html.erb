@@ -1,0 +1,17 @@
+<div class="container">
+  <h2>Lits Pets</h2>
+  <hr>
+  <% @pets.each do |pet| %>
+    <h4>Name Pet</h4>
+    <%= pet.name %>
+    <h4>Type Pet</h4>
+    <%= pet.pet_type %>
+    <h4>Age Pet</h4>
+    <%= pet.age %>
+    <br><br>
+    <%= link_to "Details",  pet_path(pet) %>
+    <br>
+    <%= link_to "New appointment", new_pet_appointment_path(pet) %>
+    <hr>
+  <% end %>
+</div>

@@ -1,0 +1,32 @@
+<div class="container">
+  <br>
+   <i class="fa fa-arrow-left" aria-hidden="true" style="color: #337ab7"></i>
+   <%= link_to "Back", pets_path %>
+   <hr>
+   <h2>Details Pet</h2>
+   <hr>
+   <h4>Pet</h4>
+   <%= @pet.name %>
+   <br>
+   <h4>Type Pet</h4>
+   <%= @pet.pet_type %>
+   <br>
+   <h4>Age Pet</h4>
+   <%= @pet.age %>
+   <br><br>
+   <%= link_to "New appointment", new_pet_appointment_path(@pet) %>
+   <hr>
+   <h2>Appointments</h2>
+   <hr>
+   <% @appointments.each do |appointment|%>
+       <h4>Day</h4>
+       <%= appointment.day %>
+       <br>
+       <h4>Hour</h4>
+       <%= appointment.hour %>
+       <br><br>
+       <%= link_to "Cancel Appointment", pet_appointment_path(@pet,appointment),
+       method: :delete, data:{confirm: "Sure to cancel the appointment?"} %>
+       <hr>
+   <% end %>
+ </div>
