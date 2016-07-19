@@ -8,9 +8,12 @@ class TowersController < ApplicationController
   end
 
   def create
-    tower = Tower.new(tower_params)
-    tower.save
-    redirect_to towers_path
+    @tower = Tower.new(tower_params)
+    if @tower.save
+      redirect_to towers_path, alert: "Exit, Tower Saved"
+    else
+      render "new", alert: "Error, Tower Not Saved"
+    end
   end
 
   def edit
