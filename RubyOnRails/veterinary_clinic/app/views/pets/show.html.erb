@@ -19,11 +19,8 @@
    <h2>Appointments</h2>
    <hr>
    <% @appointments.each do |appointment|%>
-       <h4>Day</h4>
+       <h4>Day - Hour</h4>
        <%= appointment.day %>
-       <br>
-       <h4>Hour</h4>
-       <%= appointment.hour %>
        <br><br>
        <%= link_to "Cancel Appointment", pet_appointment_path(@pet,appointment),
        method: :delete, data:{confirm: "Sure to cancel the appointment?"} %>

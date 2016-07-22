@@ -6,15 +6,9 @@
     <h1>New Appointment</h1>
     <%= form_for [@pet,@appointment] do |f| %>
       <div class="form-group">
-        <%= f.label :day, "Day"%>
+        <%= f.label :day, "Day - Hour"%>
         <br>
-        <%= f.text_field :day, placeholder: "Day", class: "form-control" %>
-      </div>
-
-      <div class="form-group">
-        <%= f.label :hour, "Hour" %>
-        <br>
-        <%= f.text_field :hour, placeholder: "Hour", class: "form-control"%>
+        <%= f.datetime_select :day, placeholder: "Day", class: "form-control" %>
       </div>
 
       <div class="form-group">
