@@ -5,13 +5,13 @@ class Product < ActiveRecord::Base
 
   validates :marca, :talla, :referencia, :costo_unitario, presence: true
 
-  validates :talla, exclusion: { in: %w(s m), message: "%{value} No disponible." }
+  #validates :talla, exclusion: { in: %w(s m), message: "%{value} No disponible." }
 
-  validates :color, inclusion: { in: %w(rojo negro blanco),message: "%{value} No disponible" }
+  #validates :color, inclusion: { in: %w(rojo negro blanco),message: "%{value} No disponible" }
 
-  validates :descripcion, length: { in: 6..20 }
+  validates :descripcion, length: { in: 4..30 }
 
-  validates :costo_unitario, numericality: { only_integer: true, greater_than: 0 }
+  validates :costo_unitario, numericality: { only_float: true, greater_than: 0 }
 
   before_save :calcular_total
 
