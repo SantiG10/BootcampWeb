@@ -1,0 +1,15 @@
+<%= form_for(@match) do |f| %>
+  <div class="field">
+    <%= f.label :date %><br>
+    <%= f.text_field :date %>
+  </div>
+  <div class="field">
+    <%= f.label :result, "Result: Id Winner, 5 en caso de empate" %><br>
+    <%= f.number_field :result %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+  <%= link_to 'Back', matches_path %>
+<% end %>

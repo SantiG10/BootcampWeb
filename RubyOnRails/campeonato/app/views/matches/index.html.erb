@@ -1,0 +1,25 @@
+<h1>Matches</h1>
+
+<ul>
+  <% @matches.each do |match| %>
+    <li><%= match.date%></li>
+    <% teams = match.teams%>
+        <%= "id: " "#{teams[0].id}" " Nombre: " "#{teams[0].name}" %> vs
+        <%= "id: " "#{teams[1].id}  Nombre:  #{teams[1].name}"%> <br>
+    <%= link_to 'Edit Result', edit_match_path(match) %><br><br>
+  <% end %>
+</ul>
+
+<h1>Champions</h1>
+
+<ul>
+  <% teams = Team.order(points: :desc).take(2) %>
+  <li>
+    <strong>first place: </strong> <%= teams[0].name %>
+    <strong>points: </strong> <%= teams[0].points%>
+  </li>
+  <li>
+    <strong>second place: </strong> <%= teams[1].name %>
+    <strong>points: </strong> <%= teams[1].points%>
+  </li>
+</ul>
