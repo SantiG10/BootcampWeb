@@ -1,0 +1,69 @@
+<h1><%= @name %></h1>
+<div class="container col-md-7 col-md-offset-2">
+  <br><h1>Furmulario 2</h1><br>
+  <%= form_tag({controller: :users, action: :contact}, method: :post) do %>
+
+    <div class="form-group">
+      <%= label_tag :name, 'Nombre' %>
+      <%= text_field_tag :name, "", placeholder: 'digite aqui su nombre', class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= label_tag :last_name, 'Apellido' %>
+      <%= text_field_tag :last_name, "", placeholder: 'digite aqui su apellido', class: "form-control" %>
+    </div>
+
+    <div class="form-group">
+      <%= label_tag :email, 'Email' %>
+      <%= text_field_tag :email, "", placeholder: 'digite aqui su email', class: "form-control message success" %>
+    </div>
+
+    <div class="form-group">
+      <%= label_tag :dob, 'Fecha de nacimiento' %>
+      <%= date_field_tag :dob, "", class: "form-control message error" %>
+    </div>
+
+    <div class="form-group">
+      <%= label_tag :sex, "Sexo" %><br>
+      <%= label_tag :sex_male, "Masculino" %>
+      <%= radio_button_tag :sex ,"male"%>
+      <%= label_tag :sex_female, "Fenenimo" %>
+      <%= radio_button_tag :sex, "female" %>
+    </div>
+
+    <div class="form-group">
+      <%= label_tag :programs, 'Lenguajes de programacion preferidos' %><br>
+
+      <%= label_tag :ruby %>
+      <%= check_box_tag :ruby %>
+
+      <%= label_tag :python %>
+      <%= check_box_tag :python %>
+
+      <%= label_tag :scala %>
+      <%= check_box_tag :scala %>
+
+      <%= label_tag :javascript %>
+      <%= check_box_tag :javascript %>
+
+      <%= label_tag :java %>
+      <%= check_box_tag :java %>
+    </div>
+
+    <div class="form-group">
+      <%= label_tag :experience, "Experiencia" %>
+      <%= text_area_tag :experience, '', placeholder: "Escribe aca tu experiencia", size: "24x5",class: 'form-control' %>
+    </div>
+
+    <div class="form-group">
+      <%= label_tag :years, 'Años de experiencia' %>
+      <%= select_tag :years, options_for_select(["6 meses a 1 año", "1-2 años", "2-5 años"]), class: "form-control" %>
+    </div>
+
+
+    <div class="form-group">
+      <%= submit_tag "Guardar",  class: "btn btn-success" %>
+      <button class="btn btn-danger">Cancelar</button>
+    </div>
+  <% end %>
+</div>
