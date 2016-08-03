@@ -15,7 +15,7 @@
     <strong>Imagen:</strong><br>
     <%= image_tag current_user.image.medium %>
   <% else %>
-    <%= link_to "registrarse", new_user_registration_path%>
+    <%= link_to "registrarse", new_user_registration_path%><br>
     <%= link_to "iniciar sesión", new_user_session_path%>
 <% end %>
   <%= yield %>

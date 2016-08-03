@@ -41,6 +41,8 @@ gem 'carrierwave'
 # gema para cambiar el tamaño de la imagen
 gem "mini_magick"
 
+# gema para controlar el acceso a acciones
+gem 'cancancan', '~> 1.10'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
