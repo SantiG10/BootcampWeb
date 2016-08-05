@@ -3,9 +3,11 @@ class Ability
 
   def initialize(user)
     can :read, :all
-    can :new, :all
-    unless user.nil?
+    if user.present?
+      can :create, Post
       can :manage, Post, :user_id => user.id
+      can :create, Comment
+      can :manage, Comment, :user_id => user.id
     end
     # Define abilities for the passed in user here. For example:
     #

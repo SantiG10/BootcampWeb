@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
-  resources :posts
+  resources :posts do
+    resources :comments, only: [:create, :update, :destroy, :edit]
+  end
 
   get 'welcome/index'
 

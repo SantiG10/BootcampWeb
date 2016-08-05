@@ -21,6 +21,22 @@
     <%= image_tag @post.user.image.medium %>
   </p>
 <% end %>
-
-<%= link_to 'Edit', edit_post_path(@post) %> |
+<% if can? :manage, @post %>
+  <%= link_to 'Edit', edit_post_path(@post) %> |
+<% end %>
 <%= link_to 'Back', posts_path %>
+<div>
+	<h3>Comentarios</h3>
+	<ul>
+		<% @post.comments.each do |comment|%>
+			<li type="square">
+				<%= comment.content%> - Escrito por: <%= comment.user.email %>
+        <% if can? :manage, comment %>
+          <%= link_to 'Edit', edit_post_comment_path(@post,comment) %>
+          <%= link_to 'Destroy', post_comment_path(@post,comment), method: :delete, data: { confirm: 'Are you sure?' } %><br>
+        <% end %>
+			</li>
+		<% end %>
+	</ul>
+	<%= render "comments/form" %>
+</div>
