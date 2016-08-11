@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>LoginFacebook</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+  <% if user_signed_in? %>
+    <%= link_to "Cerar sesión", destroy_user_session_path, method: :delete%> <br><br>
+    <strong>Usuario: </strong><%=current_user.email %> <br>
+  <% else %>
+    <%= link_to "registrarse", new_user_registration_path%>
+    <%= link_to "iniciar sesión", new_user_session_path%>
+    <%=  link_to "iniciar sesión con Facebook", user_facebook_omniauth_authorize_path %>
+  <% end %>
+  <%= yield %>
+
+</body>
+</html>
