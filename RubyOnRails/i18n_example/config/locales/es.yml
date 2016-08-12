@@ -1,0 +1,12 @@
+es:
+  title: "Bienvenidos a mi pagina web"
+  description: "Acá encontrarás información valiosa"
+
+  activerecord:
+    errors:
+      models:
+        post:
+          atributes:
+            name:
+              validation:
+                blank: "El nombre no puede estar en blanco"
